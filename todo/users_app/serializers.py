@@ -1,4 +1,7 @@
+from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer, HyperlinkedModelSerializer
+
+from user.serializers import UserModelSerializer
 from .models import User, Brend, Biography
 
 
@@ -8,7 +11,14 @@ class UserSerializer(ModelSerializer):
         fields = ('username', 'first_name', 'last_name', 'email')
 
 
-class BiographySerializer(HyperlinkedModelSerializer):
+class UserSerializerWithIsSuperuserStaff(ModelSerializer):
+    class Meta:
+        model = UserModelSerializer
+        fields = ('username','email','first_name','last_name','is_superuser', 'is_staff',)
+
+
+
+class BiographySerializer(ModelSerializer):
 
     class Meta:
         model = Biography

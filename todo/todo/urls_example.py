@@ -15,7 +15,7 @@ from rest_framework.routers import DefaultRouter, SimpleRouter
 # from todo.view_example import  BrendListAPIView
 # from todo.view_example import BrendLimitOffsetPaginatonViewSet
 
-from todo.view_example import BrendAPIView
+# from todo.view_example import BrendAPIView
 # from todo.view_example import BrendQuerysetFilterViewSet
 # from todo.view_example import BrendDjangoFilterViewSet
 
@@ -50,6 +50,8 @@ router = DefaultRouter()
 # router.register('brend',BrendViewSet)
 
 
+class BrendAPIView:
+    pass
 
 
 urlpatterns = [
